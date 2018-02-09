@@ -1,7 +1,7 @@
-package pl.kodicrew.developers.magicshovel.configuration.impl;
+package io.github.noyzys.magicshovel.v2.configuration.impl;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import pl.kodicrew.developers.magicshovel.configuration.managers.Configuration;
+import io.github.noyzys.magicshovel.v2.configuration.managers.Configuration;
 
 import java.io.File;
 

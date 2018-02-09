@@ -1,5 +1,8 @@
-package pl.kodicrew.developers.magicshovel.impl;
+package io.github.noyzys.magicshovel.v2.impl;
 
+import io.github.noyzys.magicshovel.v2.builders.ItemStackBuilder;
+import io.github.noyzys.magicshovel.v2.configuration.Settings;
+import io.github.noyzys.magicshovel.v2.utils.ChatColorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -8,11 +11,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ShapedRecipe;
-import pl.kodicrew.developers.magicshovel.builders.ItemStackBuilder;
-import pl.kodicrew.developers.magicshovel.configuration.Settings;
-import pl.kodicrew.developers.magicshovel.impl.interfaces.MagicShovelManager;
-import pl.kodicrew.developers.magicshovel.utils.ChatColorUtil;
-import pl.kodicrew.developers.magicshovel.utils.ItemUtil;
+import io.github.noyzys.magicshovel.v2.impl.interfaces.MagicShovelManager;
+import io.github.noyzys.magicshovel.v2.utils.ItemUtil;
 
 public class MagicShovelRecipeManagerImpl implements MagicShovelManager, Listener {
 

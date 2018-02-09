@@ -1,6 +1,7 @@
-package pl.kodicrew.developers.magicshovel.configuration.managers;
+package io.github.noyzys.magicshovel.v2.configuration.managers;
 
-import pl.kodicrew.developers.magicshovel.configuration.impl.ConfigurationImpl;
+import io.github.noyzys.magicshovel.v2.configuration.impl.ConfigurationImpl;
+
 import java.io.File;
 
 public class ConfigurationManager {

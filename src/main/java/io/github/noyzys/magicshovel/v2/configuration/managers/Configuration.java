@@ -1,4 +1,4 @@
-package pl.kodicrew.developers.magicshovel.configuration.managers;
+package io.github.noyzys.magicshovel.v2.configuration.managers;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.configuration.file.YamlConfiguration;

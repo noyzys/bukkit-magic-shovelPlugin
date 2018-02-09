@@ -1,4 +1,4 @@
-package pl.kodicrew.developers.magicshovel.configuration;
+package io.github.noyzys.magicshovel.v2.configuration;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,11 +1,11 @@
-package pl.kodicrew.developers.magicshovel;
+package io.github.noyzys.magicshovel.v2;
 
+import io.github.noyzys.magicshovel.v2.configuration.Settings;
+import io.github.noyzys.magicshovel.v2.configuration.managers.Configuration;
+import io.github.noyzys.magicshovel.v2.configuration.managers.ConfigurationManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import pl.kodicrew.developers.magicshovel.configuration.Settings;
-import pl.kodicrew.developers.magicshovel.configuration.managers.Configuration;
-import pl.kodicrew.developers.magicshovel.configuration.managers.ConfigurationManager;
-import pl.kodicrew.developers.magicshovel.impl.MagicShovelRecipeManagerImpl;
-import pl.kodicrew.developers.magicshovel.impl.interfaces.MagicShovelManager;
+import io.github.noyzys.magicshovel.v2.impl.MagicShovelRecipeManagerImpl;
+import io.github.noyzys.magicshovel.v2.impl.interfaces.MagicShovelManager;
 
 import java.io.File;
 

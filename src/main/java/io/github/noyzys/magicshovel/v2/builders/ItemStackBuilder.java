@@ -1,4 +1,4 @@
-package pl.kodicrew.developers.magicshovel.builders;
+package io.github.noyzys.magicshovel.v2.builders;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

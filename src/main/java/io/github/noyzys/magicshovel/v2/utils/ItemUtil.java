@@ -1,4 +1,4 @@
-package pl.kodicrew.developers.magicshovel.utils;
+package io.github.noyzys.magicshovel.v2.utils;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
