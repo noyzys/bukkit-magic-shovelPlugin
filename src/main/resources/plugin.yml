@@ -1,5 +1,5 @@
 name: MagicShovelPlugin
-main: pl.kodicrew.developers.magicshovel.MagicShovelPlugin
+main: io.github.noyzys.magicshovel.v2.MagicShovelPlugin
 author: vFeesT
 version: 2.0-SNAPSHOT
 

@@ -1,42 +1,45 @@
 package io.github.noyzys.magicshovel.v2;
 
 import io.github.noyzys.magicshovel.v2.configuration.Settings;
-import io.github.noyzys.magicshovel.v2.configuration.managers.Configuration;
-import io.github.noyzys.magicshovel.v2.configuration.managers.ConfigurationManager;
-import org.bukkit.plugin.java.JavaPlugin;
+import io.github.noyzys.magicshovel.v2.configuration.manager.IConfiguration;
+import io.github.noyzys.magicshovel.v2.configuration.manager.ConfigurationFactory;
 import io.github.noyzys.magicshovel.v2.impl.MagicShovelRecipeManagerImpl;
-import io.github.noyzys.magicshovel.v2.impl.interfaces.MagicShovelManager;
+import io.github.noyzys.magicshovel.v2.impl.MagicShovelManager;
+import io.github.noyzys.magicshovel.v2.listener.MagicShovelListener;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
-public class MagicShovelPlugin extends JavaPlugin {
+public final class MagicShovelPlugin extends JavaPlugin
+{
 
-    private MagicShovelManager magicShovelRecipeManager = new MagicShovelRecipeManagerImpl();
-
-    private Configuration settings = ConfigurationManager.create(new File(this.getDataFolder(), "config.yml"), Settings.class);
+    private final IConfiguration configuration = ConfigurationFactory.create(new File(getDataFolder(), "config.yml"), Settings.class);
+    private MagicShovelManager magicShovelRecipeManager;
 
 
     @Override
-    public void onLoad() {
-        this.getLogger().info(Settings.CONFIGURATION$PLUGIN_LOAD);
+    public void onLoad()
+    {
+        getLogger().info(Settings.CONFIGURATION$PLUGIN_LOAD);
     }
 
     @Override
-    public void onEnable() {
-        this.registerInits();
+    public void onEnable()
+    {
+        magicShovelRecipeManager = new MagicShovelRecipeManagerImpl();
+        magicShovelRecipeManager.createRecipe();
 
-        if (!this.getDataFolder().exists()) this.getDataFolder().mkdir();
-        this.getLogger().info(Settings.CONFIGURATION$PLUGIN_ENABLE);
+        new MagicShovelListener(this);
+        getLogger().info(Settings.CONFIGURATION$PLUGIN_ENABLE);
     }
-
-    private void registerInits(){
-        this.getServer().getPluginManager().registerEvents(new MagicShovelRecipeManagerImpl(), this);
-        this.magicShovelRecipeManager.createRecipe();
-
-    }
-
     @Override
-    public void onDisable() {
-        this.getLogger().info(Settings.CONFIGURATION$PLUGIN_DISABLE);
+    public void onDisable()
+    {
+        getLogger().info(Settings.CONFIGURATION$PLUGIN_DISABLE);
+    }
+
+    public MagicShovelManager getMagicShovelRecipeManager()
+    {
+        return magicShovelRecipeManager;
     }
 }

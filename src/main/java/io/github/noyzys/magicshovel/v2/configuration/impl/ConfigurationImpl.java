@@ -1,38 +1,51 @@
 package io.github.noyzys.magicshovel.v2.configuration.impl;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import io.github.noyzys.magicshovel.v2.configuration.managers.Configuration;
+import io.github.noyzys.magicshovel.v2.configuration.manager.IConfiguration;
 
 import java.io.File;
 
-public class ConfigurationImpl implements Configuration {
-
+public final class ConfigurationImpl implements IConfiguration
+{
     private final File file;
     private final Class<?> clazz;
 
-    public ConfigurationImpl(File file, Class<?> clazz) {
+    public ConfigurationImpl(File file, Class<?> clazz)
+    {
         this.clazz = clazz;
         this.file = file;
         this.reload();
     }
 
     @Override
-    public void reload() {
+    public void reload()
+    {
         File config = check(this.file);
-        try {
-            YamlConfiguration configuration = YamlConfiguration.loadConfiguration(config);
-            parse(this.clazz, configuration);
-            configuration.save(config);
-        }catch (Exception ex) {}
+
+        try
+        {
+            final YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(config);
+            parse(this.clazz, yamlConfiguration);
+            yamlConfiguration.save(config);
+
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     @Override
-    public void save() {
+    public void save()
+    {
         File config = check(this.file);
-        try {
-            YamlConfiguration configuration = YamlConfiguration.loadConfiguration(config);
-            parseSave(this.clazz, configuration);
-            configuration.save(config);
-        }catch (Exception ex) {}
+        try
+        {
+            final YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(config);
+            parseSave(this.clazz, yamlConfiguration);
+            yamlConfiguration.save(config);
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 }
